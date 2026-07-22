@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>หน้าร้านทดลอง</title>
+</head>
+<body>
+<h1>หน้าร้านทดลอง</h1>
+<pre id="out">กำลังสั่งอาหาร...</pre>
+<script>
+fetch("https://stunning-garbanzo-97xrpp5xx94x3pw5w-8080.app.github.dev/menu")
+  .then(r => r.json())
+  .then(data => out.innerText = JSON.stringify(data, null, 2))
+  .catch(err => out.innerText = "โดนยามบล็อก " + err);
+</script>
+</body>
+</html>
